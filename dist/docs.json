@@ -20,12 +20,308 @@
         "docs": "",
         "complexTypes": [],
         "slug": "echo"
+      },
+      {
+        "name": "registerUsbAttachedDetachedCallback",
+        "signature": "(callback: UsbAttachedDetachedCallback) => Promise<CallbackID>",
+        "parameters": [
+          {
+            "name": "callback",
+            "docs": "",
+            "type": "UsbAttachedDetachedCallback"
+          }
+        ],
+        "returns": "Promise<string>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "UsbAttachedDetachedCallback",
+          "CallbackID"
+        ],
+        "slug": "registerusbattacheddetachedcallback"
+      },
+      {
+        "name": "devices",
+        "signature": "() => Promise<SerialResponse<any>>",
+        "parameters": [],
+        "returns": "Promise<SerialResponse<any>>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "SerialResponse"
+        ],
+        "slug": "devices"
+      },
+      {
+        "name": "open",
+        "signature": "(options: SerialOptions) => Promise<SerialResponse<any>>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "SerialOptions"
+          }
+        ],
+        "returns": "Promise<SerialResponse<any>>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "SerialResponse",
+          "SerialOptions"
+        ],
+        "slug": "open"
+      },
+      {
+        "name": "close",
+        "signature": "() => Promise<SerialResponse<any>>",
+        "parameters": [],
+        "returns": "Promise<SerialResponse<any>>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "SerialResponse"
+        ],
+        "slug": "close"
+      },
+      {
+        "name": "read",
+        "signature": "() => Promise<SerialResponse<any>>",
+        "parameters": [],
+        "returns": "Promise<SerialResponse<any>>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "SerialResponse"
+        ],
+        "slug": "read"
+      },
+      {
+        "name": "write",
+        "signature": "(data: SerialWriteOptions) => Promise<SerialResponse<any>>",
+        "parameters": [
+          {
+            "name": "data",
+            "docs": "",
+            "type": "SerialWriteOptions"
+          }
+        ],
+        "returns": "Promise<SerialResponse<any>>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "SerialResponse",
+          "SerialWriteOptions"
+        ],
+        "slug": "write"
+      },
+      {
+        "name": "registerReadCallback",
+        "signature": "(callback: ReadCallback) => Promise<CallbackID>",
+        "parameters": [
+          {
+            "name": "callback",
+            "docs": "",
+            "type": "ReadCallback"
+          }
+        ],
+        "returns": "Promise<string>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "ReadCallback",
+          "CallbackID"
+        ],
+        "slug": "registerreadcallback"
       }
     ],
     "properties": []
   },
-  "interfaces": [],
+  "interfaces": [
+    {
+      "name": "SerialResponse",
+      "slug": "serialresponse",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "success",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "error",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "SerialError"
+          ],
+          "type": "SerialError"
+        },
+        {
+          "name": "data",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "T"
+          ],
+          "type": "T"
+        }
+      ]
+    },
+    {
+      "name": "SerialError",
+      "slug": "serialerror",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "message",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "cause",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "SerialOptions",
+      "slug": "serialoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "deviceId",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "portNum",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "baudRate",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number | undefined"
+        },
+        {
+          "name": "dataBits",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number | undefined"
+        },
+        {
+          "name": "stopBits",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number | undefined"
+        },
+        {
+          "name": "parity",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number | undefined"
+        },
+        {
+          "name": "dtr",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "rts",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "sleepOnPause",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        }
+      ]
+    },
+    {
+      "name": "SerialWriteOptions",
+      "slug": "serialwriteoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "data",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    }
+  ],
   "enums": [],
-  "typeAliases": [],
+  "typeAliases": [
+    {
+      "name": "UsbAttachedDetachedCallback",
+      "slug": "usbattacheddetachedcallback",
+      "docs": "",
+      "types": [
+        {
+          "text": "(data: SerialResponse<any>): void",
+          "complexTypes": [
+            "SerialResponse"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CallbackID",
+      "slug": "callbackid",
+      "docs": "",
+      "types": [
+        {
+          "text": "string",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "ReadCallback",
+      "slug": "readcallback",
+      "docs": "",
+      "types": [
+        {
+          "text": "(data: SerialResponse<any>): void",
+          "complexTypes": [
+            "SerialResponse"
+          ]
+        }
+      ]
+    }
+  ],
   "pluginConfigs": []
 }

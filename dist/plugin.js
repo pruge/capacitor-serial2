@@ -10,6 +10,27 @@ var capacitorSerial = (function (exports, core) {
             console.log('ECHO', options);
             return options;
         }
+        registerUsbAttachedDetachedCallback() {
+            throw new Error('Method not implemented.');
+        }
+        devices() {
+            throw new Error('Method not implemented.');
+        }
+        open() {
+            throw new Error('Method not implemented.');
+        }
+        close() {
+            throw new Error('Method not implemented.');
+        }
+        read() {
+            throw new Error('Method not implemented.');
+        }
+        write() {
+            throw new Error('Method not implemented.');
+        }
+        registerReadCallback() {
+            throw new Error('Method not implemented.');
+        }
     }
 
     var web = /*#__PURE__*/Object.freeze({
