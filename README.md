@@ -2,6 +2,9 @@
 
 Serial over OTG
 
+# original
+https://github.com/jonasclaes/capacitor-serial
+
 ## Install
 
 ```bash
